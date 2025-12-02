@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug STM32F1",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/stm32f103c8t6_blink.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+
+            "preLaunchTask": "openocd-start",
+
+            "servertype": "openocd",
+            "gdbPath": "/opt/arm-gnu-toolchain/bin/arm-none-eabi-gdb",
+
+            "configFiles": [
+                "interface/stlink.cfg",
+                "target/stm32f1x.cfg"
+            ],
+
+            "device": "STM32F103C8",
+            "svdFile": "${workspaceFolder}/STM32F103.svd",
+
+            "runToEntryPoint": "_reset_handler"
+        }
+    ]
+}
